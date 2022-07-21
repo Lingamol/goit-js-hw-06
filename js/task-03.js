@@ -23,9 +23,9 @@ const imgListRef = document.querySelector('ul.gallery');
 // });
 // console.log(galleryItems);
 // imgListRef.append(...galleryItems);
-const makeGalleryItemsMarkup = ({ url, alt }) => {
-  return `<img alt=${alt} src=${url}>`;
-};
-const galleryItemsMarkup = images.map(makeGalleryItemsMarkup).join('');
-console.log(galleryItemsMarkup);
+
+// const makeGalleryItemsMarkup = ({ url, alt }) => `<img alt=${alt} src=${url}>`;
+
+const galleryItemsMarkup = images.map(({ url, alt }) => `<img alt=${alt} src=${url}>`).join('');
+// console.log(galleryItemsMarkup);
 imgListRef.insertAdjacentHTML('afterbegin', galleryItemsMarkup);
