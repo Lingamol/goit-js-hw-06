@@ -26,6 +26,13 @@ const imgListRef = document.querySelector('ul.gallery');
 
 // const makeGalleryItemsMarkup = ({ url, alt }) => `<img alt=${alt} src=${url}>`;
 
-const galleryItemsMarkup = images.map(({ url, alt }) => `<img alt=${alt} src=${url}>`).join('');
-// console.log(galleryItemsMarkup);
+const galleryItemsMarkup = images
+  .map(({ url, alt }) => `<li><img alt=${alt} src=${url}></li>`)
+  .join('');
+
 imgListRef.insertAdjacentHTML('afterbegin', galleryItemsMarkup);
+const listItemsByTagName = document.querySelectorAll('li');
+
+for (const item of listItemsByTagName) {
+  item.classList.add('galleryItems');
+}

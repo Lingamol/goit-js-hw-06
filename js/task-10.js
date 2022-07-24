@@ -24,6 +24,7 @@ function createBoxes(amount) {
 }
 
 function CreateDiv() {
+  refs.divBoxes.innerHTML = '';
   const items = createBoxes(refs.input.value);
   refs.divBoxes.append(...items);
 }
