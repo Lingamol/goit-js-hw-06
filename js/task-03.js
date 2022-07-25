@@ -31,8 +31,5 @@ const galleryItemsMarkup = images
   .join('');
 
 imgListRef.insertAdjacentHTML('afterbegin', galleryItemsMarkup);
-const listItemsByTagName = document.querySelectorAll('li');
 
-for (const item of listItemsByTagName) {
-  item.classList.add('galleryItems');
-}
+imgListRef.classList.add('galleryItems');
